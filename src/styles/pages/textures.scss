@@ -1,6 +1,7 @@
 .textures {
   &__wrapper {
     @include wrapper;
+    margin-bottom: 50px;
 
     display: grid;
     grid-gap: 50px;
