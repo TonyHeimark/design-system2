@@ -1,0 +1,9 @@
+.page-top {
+  @include wrapper;
+  height: 70px;
+
+  &__title {
+    padding: 10px 0 20px;
+    border-bottom: 2px solid $text-color;
+  }
+}

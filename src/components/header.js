@@ -1,42 +1,92 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from 'react'
+import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import logo from '../assets/images/eagle.svg'
+import hamburger from '../assets/images/iconfinder-icon.svg'
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const menuItems = [
+  {
+    label: 'Colors',
+    url: '/colors',
+  },
+  {
+    label: 'Textures',
+    url: '/textures',
+  },
+  {
+    label: 'Forms',
+    url: '/forms',
+  },
+  {
+    label: 'Buttons',
+    url: '/buttons',
+  },
+  {
+    label: 'Typography',
+    url: '/typography',
+  },
+]
 
-Header.defaultProps = {
-  siteTitle: ``,
+const Header = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false)
+
+  const handleIsNavOpen = () => {
+    if (isNavOpen) {
+      setIsNavOpen(false)
+    } else {
+      setIsNavOpen(true)
+    }
+  }
+
+  return (
+    <>
+      <header className="header">
+        <div className="header__wrapper">
+          <img
+            className="header__button"
+            onClick={handleIsNavOpen}
+            src={hamburger}
+            alt="hamburger menu"
+          ></img>
+        </div>
+      </header>
+
+      <nav
+        className={
+          isNavOpen
+            ? 'navigation navigation--open'
+            : 'navigation navigation--closed'
+        }
+      >
+        <button className="navigation__button" onClick={handleIsNavOpen}>
+          X
+        </button>
+        <div className="navigation__logo-container">
+          <img className="navigation__logo" src={logo} alt="eagle logo"></img>
+        </div>
+        <ul className="navigation__list">
+          <Link
+            to="/"
+            className="navigation__link"
+            activeClassName="navigation__link--active"
+          >
+            <li className="navigation__label">Home</li>
+          </Link>
+          <li className="navigation__section-label">Components</li>
+
+          {menuItems.map(item => (
+            <Link
+              to={item.url}
+              className="navigation__link"
+              activeClassName="navigation__link--active"
+            >
+              <li className="navigation__label">{item.label}</li>
+            </Link>
+          ))}
+        </ul>
+      </nav>
+    </>
+  )
 }
 
 export default Header

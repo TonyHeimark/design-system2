@@ -1,0 +1,63 @@
+//Variables and Mixins
+@import 'variables';
+@import 'mixins';
+
+//General Styling
+html {
+  font-family: 'IBM Plex Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  scroll-behavior: smooth;
+}
+
+input,
+button,
+textarea {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  word-break: break-word;
+}
+
+main {
+  min-height: $pageMinHeight;
+}
+
+html,
+body,
+body > div,
+body > div > div {
+  height: 100%;
+}
+
+a {
+  color: $color-blue;
+
+  &:hover {
+    color: lighten($color-blue, 30%);
+  }
+}
+
+.wrapper {
+  background-color: #fff;
+}
+
+.wrapper--grey {
+  background-color: $background-grey;
+}
+
+//Components and pages
+@import 'components/pageTitle';
+@import 'components/header';
+@import 'components/footer';
+@import 'pages/buttons';
+@import 'pages/textures';

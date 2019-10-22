@@ -1,0 +1,131 @@
+.header {
+  height: 70px;
+  background-color: $text-color;
+
+  &__wrapper {
+    @include wrapper;
+  }
+
+  @include lg {
+    display: none;
+  }
+
+  &__button {
+    margin-top: 18px;
+  }
+}
+
+.navigation--open {
+  display: block;
+  animation: showItems 0.2s ease-in-out;
+
+  @include lg {
+    animation: none;
+  }
+}
+
+.navigation--closed {
+  display: none;
+
+  @include lg {
+    display: block;
+  }
+}
+
+.navigation {
+  height: 200vh;
+  background: $color-blue;
+  width: 250px;
+  border-right: 6px solid $background-color;
+  position: fixed;
+  top: 0;
+
+  &__button {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    font-size: 1.4rem;
+    color: $background-color;
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  &__logo-container {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo {
+    width: 110px;
+  }
+
+  &__list {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  &__link {
+    text-decoration: none;
+    width: 100%;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+
+    &--active {
+      color: $text-color;
+
+      .navigation__label {
+        background-color: $background-color;
+      }
+    }
+  }
+
+  &__label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 15px 0 15px 20px;
+    width: calc(100% - 20px);
+    border-top: 1px solid $background-color;
+
+    @include lg {
+      padding: 10px 0 10px 40px;
+      width: calc(100% - 40px);
+      font-size: 1rem;
+    }
+  }
+
+  &__section-label {
+    padding: 10px 0 10px 10px;
+    font-size: 0.9rem;
+    border-top: 1px solid $background-color;
+    background-color: $text-color;
+    color: white;
+  }
+}
+
+@keyframes showItems {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideItems {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

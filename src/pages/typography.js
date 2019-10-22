@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from '../layout'
 
-const Home = () => {
+const Typography = () => {
   return (
-    <Layout title="Home">
+    <Layout title="Typography">
       <div></div>
     </Layout>
   )
 }
 
-export default Home
+export default Typography

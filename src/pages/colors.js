@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from '../layout'
 
-const Home = () => {
+const Colors = () => {
   return (
-    <Layout title="Home">
+    <Layout title="Colors">
       <div></div>
     </Layout>
   )
 }
 
-export default Home
+export default Colors

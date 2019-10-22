@@ -1,0 +1,39 @@
+.textures {
+  &__wrapper {
+    @include wrapper;
+
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr;
+
+    @include md {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include xlg {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__texture {
+    width: 100%;
+    height: 300px;
+  }
+
+  &__texture-description {
+    background-color: $background-grey;
+    padding: 10px 15px;
+    margin: 20px 0 0;
+    border-right: 2px solid $color-light-blue;
+  }
+
+  &__texture-description-title {
+    font-weight: bold;
+    margin: 0;
+    padding: 0 0 10px 0;
+  }
+
+  &__texture-description-body {
+    margin: 0;
+  }
+}
