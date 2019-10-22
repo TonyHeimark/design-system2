@@ -70,6 +70,7 @@ const Header = () => {
             to="/"
             className="navigation__link"
             activeClassName="navigation__link--active"
+            key="/"
           >
             <li className="navigation__label">Home</li>
           </Link>
@@ -80,6 +81,7 @@ const Header = () => {
               to={item.url}
               className="navigation__link"
               activeClassName="navigation__link--active"
+              key={item.url}
             >
               <li className="navigation__label">{item.label}</li>
             </Link>

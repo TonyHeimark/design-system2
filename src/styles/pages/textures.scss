@@ -36,4 +36,24 @@
   &__texture-description-body {
     margin: 0;
   }
+
+  &__test {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 0;
+    width: 100px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      background: $background-grey;
+      transition: 0.2s linear;
+    }
+
+    &--green {
+      background: $background-color;
+    }
+  }
 }
