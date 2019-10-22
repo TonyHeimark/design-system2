@@ -1,9 +1,8 @@
-import React from 'react'
-import Header from './components/header'
-import Footer from './components/footer'
-import PageTitle from './components/pageTitle'
+import React from "react"
+import Header from "./components/header"
+import PageTitle from "./components/pageTitle"
 
-import './styles/layout.scss'
+import "./styles/layout.scss"
 
 const NotFoundPage = props => (
   <>
@@ -12,7 +11,6 @@ const NotFoundPage = props => (
       <PageTitle title={props.title}></PageTitle>
       {props.children}
     </main>
-    <Footer></Footer>
   </>
 )
 

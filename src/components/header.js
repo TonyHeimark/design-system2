@@ -1,29 +1,29 @@
-import React, { useState } from 'react'
-import { Link } from 'gatsby'
+import React, { useState } from "react"
+import { Link } from "gatsby"
 
-import logo from '../assets/images/eagle.svg'
-import hamburger from '../assets/images/iconfinder-icon.svg'
+import logo from "../assets/images/eagle.svg"
+import hamburger from "../assets/images/iconfinder-icon.svg"
 
 const menuItems = [
   {
-    label: 'Colors',
-    url: '/colors',
+    label: "Colors",
+    url: "/colors",
   },
   {
-    label: 'Textures',
-    url: '/textures',
+    label: "Textures",
+    url: "/textures",
   },
   {
-    label: 'Forms',
-    url: '/forms',
+    label: "Forms",
+    url: "/forms",
   },
   {
-    label: 'Buttons',
-    url: '/buttons',
+    label: "Buttons",
+    url: "/buttons",
   },
   {
-    label: 'Typography',
-    url: '/typography',
+    label: "Typography",
+    url: "/typography",
   },
 ]
 
@@ -48,14 +48,15 @@ const Header = () => {
             src={hamburger}
             alt="hamburger menu"
           ></img>
+          <img className="header__logo" src={logo} alt="logo"></img>
         </div>
       </header>
 
       <nav
         className={
           isNavOpen
-            ? 'navigation navigation--open'
-            : 'navigation navigation--closed'
+            ? "navigation navigation--open"
+            : "navigation navigation--closed"
         }
       >
         <button className="navigation__button" onClick={handleIsNavOpen}>

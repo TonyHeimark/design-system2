@@ -1,10 +1,11 @@
 //Variables and Mixins
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
 //General Styling
 html {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   padding: 0;
   margin: 0;
   font-size: 16px;
@@ -15,7 +16,7 @@ html {
 input,
 button,
 textarea {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
@@ -56,8 +57,11 @@ a {
 }
 
 //Components and pages
-@import 'components/pageTitle';
-@import 'components/header';
-@import 'components/footer';
-@import 'pages/buttons';
-@import 'pages/textures';
+@import "components/pageTitle";
+@import "components/header";
+@import "components/footer";
+@import "pages/buttons";
+@import "pages/textures";
+@import "pages/colors";
+@import "pages/forms";
+@import "pages/typography";
