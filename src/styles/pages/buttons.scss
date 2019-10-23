@@ -36,12 +36,18 @@
     border-radius: 4px;
     cursor: pointer;
     &:hover {
-      background: $background-grey;
+      background: darken($background-color, 10%);
+      color: $text-color;
       transition: 0.2s linear;
     }
 
     &--green {
       background: $background-color;
+    }
+
+    &--small {
+      width: 100px;
+      padding: 8px 0;
     }
   }
 

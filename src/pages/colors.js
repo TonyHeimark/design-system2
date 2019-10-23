@@ -12,26 +12,22 @@ const Colors = () => {
             <Color
               number="1"
               hex="#c5d3c9"
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry."
+              text="Used as one of the primary colors, used on buttons, hover effects and section backgrounds"
             />
             <Color
               number="2"
               hex="#f7f7f7"
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry."
+              text="Used as a primary page background color"
             />
             <Color
               number="3"
               hex="#373737"
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry."
+              text="Used as the primary text color"
             />
             <Color
               number="4"
               hex="#283440"
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry."
+              text="Used as the primary background-color for headers, footers and menus"
             />
           </div>
 
@@ -40,20 +36,17 @@ const Colors = () => {
             <Color
               number="5"
               hex="#5d83ff"
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry."
+              text="This color is used to underline and seperate between elements on the page"
             />
             <Color
               number="6"
               hex="#f2b036"
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry."
+              text="This color can be used to highlight an area or a section, use sparingly."
             />
             <Color
               number="7"
               hex="#e6e6e6"
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry."
+              text="This color is mainly used to display disabled or non important elements"
             />
           </div>
         </div>

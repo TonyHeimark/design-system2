@@ -19,9 +19,8 @@ const Forms = () => {
               <div className="forms__description">
                 <p className="forms__description-title">How to use</p>
                 <p className="forms__description-body">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s,
+                  This is used as all input fields, make sure to use aria-label
+                  for screen-readers.
                 </p>
               </div>
               <pre className="forms__code">
@@ -43,9 +42,8 @@ const Forms = () => {
               <div className="forms__description">
                 <p className="forms__description-title">How to use</p>
                 <p className="forms__description-body">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s,
+                  This is used as all textareas, make sure to use aria-label for
+                  screen-readers.
                 </p>
               </div>
               <pre className="forms__code">

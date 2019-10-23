@@ -36,9 +36,8 @@ const Textures = () => {
             >
               <p className="textures__texture-description-title">How to use</p>
               <p className="textures__texture-description-body">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s
+                This texture can be used to bring attention to certain text
+                boxes or information.
               </p>
               <button
                 className="textures__test textures__test--green"
@@ -74,9 +73,8 @@ const Textures = () => {
             >
               <p className="textures__texture-description-title">How to use</p>
               <p className="textures__texture-description-body">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s
+                This texture is used to for element backgrounds or as a section
+                background.
               </p>
               <button
                 className="textures__test textures__test--green"
@@ -112,9 +110,8 @@ const Textures = () => {
             >
               <p className="textures__texture-description-title">How to use</p>
               <p className="textures__texture-description-body">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s
+                This texture can be used to give a realistic look to certain
+                sections or elements.
               </p>
               <button
                 className="textures__test textures__test--green"
