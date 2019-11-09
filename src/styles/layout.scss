@@ -1,16 +1,26 @@
 //Variables and Mixins
-@import "variables";
-@import "mixins";
+@import "./variables";
+@import "./mixins";
 
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans|IBM+Plex+Serif&display=swap");
 //General Styling
 html {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "IBM Plex Serif", serif;
   padding: 0;
   margin: 0;
   font-size: 16px;
   line-height: 24px;
   scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 input,
@@ -42,6 +52,7 @@ body > div > div {
 
 a {
   color: $color-blue;
+  font-family: "IBM Plex Sans", sans-serif;
 
   &:hover {
     color: lighten($color-blue, 30%);
@@ -52,16 +63,11 @@ a {
   background-color: #fff;
 }
 
-.wrapper--grey {
-  background-color: $background-grey;
+.wrapper--brown {
+  background-color: $background-brown;
 }
 
 //Components and pages
-@import "components/pageTitle";
 @import "components/header";
 @import "components/footer";
-@import "pages/buttons";
-@import "pages/textures";
-@import "pages/colors";
-@import "pages/forms";
-@import "pages/typography";
+@import "pages/home";

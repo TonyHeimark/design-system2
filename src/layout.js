@@ -4,14 +4,11 @@ import PageTitle from "./components/pageTitle"
 
 import "./styles/layout.scss"
 
-const NotFoundPage = props => (
+const Layout = props => (
   <>
     <Header></Header>
-    <main>
-      <PageTitle title={props.title}></PageTitle>
-      {props.children}
-    </main>
+    <main>{props.children}</main>
   </>
 )
 
-export default NotFoundPage
+export default Layout

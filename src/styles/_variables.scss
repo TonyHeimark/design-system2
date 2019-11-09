@@ -1,18 +1,19 @@
 //Primary colors
-$background-color: #c5d3c9;
-$background-grey: #f7f7f7;
-$text-color: #373737;
-$color-blue: #283440;
+$background-color: #ffffff;
+$background-brown: #fffcf8;
+$text-color: #272727;
+$color-blue: #1a30ff;
 
 //Secondary Colors
-$color-light-blue: #5d83ff;
-$color-yellow: #f2b036;
+$color-light-blue: lighten($color-blue, 30%);
+$color-yellow: #ffaf20;
+$color-red: #ff5a3a;
 $color-light-grey: #e6e6e6;
 
 //Breakpoints
 $screen-sm-min: 576px;
 $screen-md-min: 768px;
-$screen-lg-min: 960px;
+$screen-lg-min: 1025px;
 $screen-xxl: 1600px;
 
 //Wrapper width and heights

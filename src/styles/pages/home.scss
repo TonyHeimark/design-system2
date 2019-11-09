@@ -1,0 +1,230 @@
+.home-page {
+  padding-bottom: 10px;
+  background: $background-brown;
+  position: relative;
+  &__section-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.01rem;
+    margin-top: 0;
+    font-size: 1.4rem;
+    &--blue {
+      border-bottom: 3px solid $color-blue;
+      color: $color-blue;
+    }
+  }
+
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__top-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 0px;
+    margin-bottom: 150px;
+    @include md {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 200px;
+      margin-right: -4.3%;
+    }
+    @media (min-width: 1200px) {
+      margin-right: 0;
+    }
+  }
+
+  &__section-wrapper {
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 50px auto 50px;
+    @include md {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 100px auto 200px;
+      &--left {
+        margin: 100px auto 200px 0;
+      }
+      &--right {
+        margin: 100px 0 200px auto;
+      }
+    }
+
+    &--newsletter {
+      max-width: 600px;
+    }
+  }
+
+  &__img-wrapper {
+    max-width: 800px;
+    width: 100%;
+    background: $color-blue;
+    border-radius: 2px;
+    @include md {
+      width: 130%;
+
+      &--right {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        margin-left: -30%;
+      }
+      &--left {
+        grid-column-start: 1;
+        grid-row-start: 1;
+      }
+    }
+  }
+
+  &__top-img {
+    width: 100%;
+    border-radius: 2px 2px 0 0;
+    object-fit: cover;
+    opacity: 1;
+  }
+
+  &__text-wrapper {
+    position: relative;
+    z-index: 6;
+    grid-row-start: 2;
+    @include md {
+      &--right {
+        grid-column-start: 2;
+        grid-row-start: 1;
+      }
+      &--left {
+        grid-column-start: 1;
+        grid-row-start: 1;
+      }
+    }
+  }
+
+  &__text-background {
+    padding: 20px 0;
+    background: $background-brown;
+    height: fit-content;
+    border-radius: 0 0 2px 2px;
+    &--top {
+    }
+
+    @include md {
+      position: absolute;
+      &--top {
+        border-radius: 2px;
+        top: unset;
+        bottom: 0px;
+      }
+
+      &--right {
+        padding: 20px 20px 0 20px;
+      }
+
+      &--left {
+        padding: 20px 20px 20px 0;
+      }
+    }
+    @include lg {
+      &--top {
+        border-radius: 2px;
+        top: unset;
+        bottom: 200px;
+      }
+    }
+  }
+
+  &__cta-btn {
+    @include button;
+    @include md {
+      position: absolute;
+      bottom: 130px;
+      &--right {
+        right: 0;
+      }
+
+      &--top {
+        bottom: -120px;
+      }
+    }
+    @include lg {
+      &--top {
+        bottom: 70px;
+      }
+    }
+  }
+
+  &__input {
+    max-width: 288px;
+    width: 100%;
+    border: 2px solid $color-yellow;
+    background: $background-brown;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    @include md {
+      position: absolute;
+      bottom: -50px;
+      width: 70%;
+    }
+
+    @include lg {
+      bottom: 140px;
+    }
+  }
+
+  &__newsletter-signup {
+    grid-row: 3;
+    margin-top: 0px;
+    @include md {
+      margin-top: 10px;
+      grid-row: 1;
+    }
+  }
+
+  &__newsletter-input {
+    @extend .home-page__input;
+    position: static;
+    width: 90%;
+  }
+
+  &__newsletter-btn {
+    @include button;
+  }
+}
+
+.modal {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  z-index: 7;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: darken($color-light-grey, 20%);
+  }
+
+  &__wrapper {
+    padding: 0 4%;
+    position: fixed;
+    z-index: 8;
+    width: 92%;
+    background: $background-brown;
+    margin-top: 100px;
+    margin-left: 0;
+    min-height: 600px;
+    border-radius: 2px;
+
+    @include md {
+      margin-left: 10%;
+      max-width: 72%;
+    }
+  }
+}
