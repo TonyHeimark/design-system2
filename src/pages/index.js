@@ -4,10 +4,34 @@ import livingRoom from "../assets/images/interior-design-of-a-house-1571460.jpg"
 import sook from "../assets/images/søk_selg1.svg"
 import tjen from "../assets/images/hva_tjener_du.svg"
 import tilgang from "../assets/images/faa_tilgang.svg"
+import kjokken from "../assets/images/Kjøkken.svg"
+import garasj from "../assets/images/Garasj.svg"
+import bad from "../assets/images/Bad.svg"
+import balkong from "../assets/images/Balkong.svg"
 import Zoom from "react-reveal/Zoom"
 import Fade from "react-reveal/Fade"
 
 const Home = () => {
+  const [parkingChecked, setParkingChecked] = useState(false)
+  const [balkongChecked, setBalkongChecked] = useState(false)
+  const [badChecked, setBadChecked] = useState(false)
+  const [kjokkenChecked, setKjokkenChecked] = useState(false)
+
+  const handleCheckbox = e => {
+    console.log(e.target.id)
+    if (e.target.id === "parking") {
+      setParkingChecked(!parkingChecked)
+    } else if (e.target.id === "balkong") {
+      setBalkongChecked(!balkongChecked)
+    } else if (e.target.id === "bad") {
+      setBadChecked(!badChecked)
+    } else if (e.target.id === "kjokken") {
+      setKjokkenChecked(!kjokkenChecked)
+    } else {
+      return
+    }
+  }
+
   const [isModalOpen, setIsModalOpen] = useState(false)
   const handleModal = () => {
     setIsModalOpen(!isModalOpen)
@@ -21,7 +45,154 @@ const Home = () => {
             <div className="modal__background" onClick={handleModal}></div>
             <Zoom clear duration={300}>
               <div className="modal__wrapper">
-                <h2>HEI</h2>
+                <div className="modal__close-wrapper">
+                  <button
+                    aria-label="closes modal"
+                    className="modal__close"
+                    onClick={handleModal}
+                  >
+                    X
+                  </button>
+                </div>
+                <div className="modal__content">
+                  <div className="modal__top-wrapper">
+                    <h2 className=" modal__heading home-page__section-title">
+                      Fyll inn feltene
+                    </h2>
+                  </div>
+                  <div className="modal__form-wrapper">
+                    <form className="modal__form">
+                      <div className="modal__text-box">
+                        <span className="modal__sub-heading">
+                          Primærrom (P rom)
+                        </span>
+                        <p className="modal__text">
+                          Primærrom gir et bedre estimat enn bruksareal og er
+                          derfor ønskelig å anvende i prediksjonen.
+                        </p>
+                      </div>
+                      <input
+                        className="modal__input"
+                        type="text"
+                        placeholder="94"
+                        aria-label="primærrom"
+                      />
+                      <div className="modal__text-box">
+                        <span className="modal__sub-heading">
+                          Har du følgende
+                        </span>
+                        <p className="modal__text">
+                          Avhengig av datatilgjengelighet, vil informasjonen
+                          muligvis bli brukt til å gi deg et mer treffsikkert
+                          estimat.
+                        </p>
+                      </div>
+                      <div className="modal__checkbox-wrapper">
+                        <div
+                          className={`modal__checkbox-item ${
+                            parkingChecked
+                              ? "modal__checkbox-item--checked"
+                              : ""
+                          }`}
+                          onClick={handleCheckbox}
+                        >
+                          <label for="parking" className="modal__item">
+                            <span className="modal__item-name">
+                              Parkering/garasj
+                            </span>
+                            <img src={garasj} alt="kjøkken ikon" />
+                          </label>
+                          <input
+                            checked={parkingChecked}
+                            type="checkbox"
+                            id="parking"
+                            name="parking"
+                            value="Parkering/garasj"
+                          />
+                        </div>
+
+                        <div
+                          className={`modal__checkbox-item ${
+                            balkongChecked
+                              ? "modal__checkbox-item--checked"
+                              : ""
+                          }`}
+                          onClick={handleCheckbox}
+                        >
+                          <label for="balkong" className="modal__item">
+                            <span className="modal__item-name">
+                              Balkong/terasse
+                            </span>
+                            <img src={balkong} alt="kjøkken ikon" />
+                          </label>
+
+                          <input
+                            checked={balkongChecked}
+                            type="checkbox"
+                            id="balkong"
+                            name="balkong"
+                            value="Balkong/terasse"
+                          />
+                        </div>
+                      </div>
+                      <div className="modal__text-box">
+                        <span className="modal__sub-heading">
+                          Har du oppusset følgende siden du kjøpte din bolig?
+                        </span>
+                        <p className="modal__text">
+                          Effekten av oppussing er vanligvis merkbar, men
+                          avhenger blant annet av boligtype og lokalitet. Velg
+                          nedenfor for et mer treffsikkert estimat
+                        </p>
+                      </div>
+                      <div className="modal__checkbox-wrapper">
+                        <div
+                          className={`modal__checkbox-item ${
+                            badChecked ? "modal__checkbox-item--checked" : ""
+                          }`}
+                          onClick={handleCheckbox}
+                        >
+                          <label for="bad" className="modal__item">
+                            <span className="modal__item-name">
+                              Bad/toilett
+                            </span>
+                            <img src={bad} alt="kjøkken ikon" />
+                          </label>
+                          <input
+                            checked={badChecked}
+                            className="modal__checkbox"
+                            type="checkbox"
+                            id="bad"
+                            name="parking"
+                            value="Parkering/garasj"
+                          />
+                        </div>
+
+                        <div
+                          className={`modal__checkbox-item ${
+                            kjokkenChecked
+                              ? "modal__checkbox-item--checked"
+                              : ""
+                          }`}
+                          onClick={handleCheckbox}
+                        >
+                          <label for="kjokken" className="modal__item">
+                            <span className="modal__item-name">kjøkken</span>
+                            <img src={kjokken} alt="kjøkken ikon" />
+                          </label>
+
+                          <input
+                            checked={kjokkenChecked}
+                            type="checkbox"
+                            id="kjokken"
+                            name="balkong"
+                            value="Balkong/terasse"
+                          />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
             </Zoom>
           </div>
@@ -68,7 +239,7 @@ const Home = () => {
           </h2>
           <div className="home-page__section-wrapper home-page__section-wrapper--left">
             <div className=" home-page__text-wrapper home-page__text-wrapper--right">
-              <Fade right delay={500}>
+              <Fade right>
                 <div className="home-page__text-background home-page__text-background--right">
                   <h3 className="home-page__section-title">Søk</h3>
                   <p className="home-page__text">
@@ -91,7 +262,7 @@ const Home = () => {
           </div>
           <div className="home-page__section-wrapper home-page__section-wrapper--right">
             <div className=" home-page__text-wrapper home-page__text-wrapper--left">
-              <Fade left delay={500}>
+              <Fade left>
                 <div className="home-page__text-background home-page__text-background--left">
                   <h3 className="home-page__section-title">Hva tjener du?</h3>
                   <p className="home-page__text">
@@ -114,7 +285,7 @@ const Home = () => {
           </div>
           <div className="home-page__section-wrapper home-page__section-wrapper--left">
             <div className=" home-page__text-wrapper home-page__text-wrapper--right">
-              <Fade right delay={500}>
+              <Fade right>
                 <div className="home-page__text-background home-page__text-background--right">
                   <h3 className="home-page__section-title">Få tilgang</h3>
                   <p className="home-page__text">

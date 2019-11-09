@@ -44,11 +44,16 @@
     color: white;
     text-decoration: none;
     display: inline-block;
+    padding-bottom: 5px;
+    margin: 8px 20px 0 0;
+
+    &--active {
+      border-bottom: 3px solid white;
+    }
   }
 
   &__label {
     font-weight: 300;
-    margin: 8px 20px 0 0;
   }
 }
 

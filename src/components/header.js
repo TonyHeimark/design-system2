@@ -8,7 +8,7 @@ import hamburger from "../assets/images/iconfinder-icon.svg"
 const menuItems = [
   {
     label: "Home",
-    url: "#",
+    url: "/",
   },
   {
     label: "About Us",
@@ -75,7 +75,11 @@ const Header = () => {
         }
       >
         <nav>
-          <button className="navigation__button" onClick={handleIsNavOpen}>
+          <button
+            aria-label="closes mobile menu"
+            className="navigation__button"
+            onClick={handleIsNavOpen}
+          >
             X
           </button>
 

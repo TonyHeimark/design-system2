@@ -208,12 +208,12 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: darken($color-light-grey, 20%);
+    background: rgba(50, 50, 50, 0.9);
   }
 
   &__wrapper {
     padding: 0 4%;
-    position: fixed;
+    position: absolute;
     z-index: 8;
     width: 92%;
     background: $background-brown;
@@ -226,5 +226,111 @@
       margin-left: 10%;
       max-width: 72%;
     }
+  }
+
+  &__close-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    border: none;
+    background: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $text-color;
+    padding: 10px 15px;
+    right: -4%;
+    top: 10px;
+  }
+
+  // form
+
+  &__content {
+    margin: 50px auto;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  &__heading {
+    margin-bottom: 50px;
+  }
+
+  &__text-box {
+    margin: 70px 0 0;
+  }
+
+  &__sub-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &__text {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  &__input {
+    max-width: 50px;
+    width: 100%;
+    border: 2px solid $color-yellow;
+    background: $background-brown;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+
+  &__checkbox-wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    grid-gap: 50px;
+    margin: 30px 0;
+    @include sm {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  &__checkbox-item {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.3s;
+      border: 10px solid rgba(85, 243, 85, 0.267);
+    }
+
+    &--checked {
+      transition: 0.3s;
+      border: 10px solid $color-green !important;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    cursor: pointer;
+  }
+
+  &__item-name {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  input[type="checkbox" i] {
+    width: 100%;
+    margin-left: 10px auto;
+    opacity: 0;
   }
 }
