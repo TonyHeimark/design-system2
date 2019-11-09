@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../layout"
 import livingRoom from "../assets/images/interior-design-of-a-house-1571460.jpg"
 import sook from "../assets/images/søk_selg1.svg"
@@ -8,8 +8,32 @@ import Zoom from "react-reveal/Zoom"
 import Fade from "react-reveal/Fade"
 
 import ModalForm from "../components/modalForm"
+import Result from "../components/result"
 
 const Home = () => {
+  const [adress, setAdress] = useState("")
+
+  const [result, setResult] = useState(false)
+  const handleResult = () => {
+    setResult(!result)
+  }
+
+  useEffect(() => {
+    if (!isModalOpen) {
+      localStorage.clear()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (window) {
+      window.scrollTo(0, 0)
+    }
+  }, [result])
+
+  const handleAdress = e => {
+    setAdress(e.target.value)
+  }
+
   const [isModalOpen, setIsModalOpen] = useState(false)
   const handleModal = () => {
     setIsModalOpen(!isModalOpen)
@@ -34,12 +58,38 @@ const Home = () => {
                 </div>
                 <div className="modal__content">
                   <div className="modal__top-wrapper">
-                    <h2 className=" modal__heading home-page__section-title">
-                      Fyll inn feltene
-                    </h2>
+                    {result ? (
+                      <h2 className=" modal__heading home-page__section-title">
+                        Resultater for
+                      </h2>
+                    ) : (
+                      <h2 className=" modal__heading home-page__section-title">
+                        Fyll inn feltene
+                      </h2>
+                    )}
                   </div>
                   <div className="modal__form-wrapper">
-                    <ModalForm />
+                    {result ? <Result adress={adress} /> : <ModalForm />}
+                    <div className="modal__continue">
+                      {result ? (
+                        <div className="modal__prev-or-next">
+                          <button
+                            className="modal__continue-btn modal__continue-btn--grey"
+                            onClick={handleResult}
+                          >
+                            Forrige
+                          </button>
+                          <button className="modal__continue-btn">Neste</button>
+                        </div>
+                      ) : (
+                        <button
+                          className="modal__continue-btn"
+                          onClick={handleResult}
+                        >
+                          Neste
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -67,9 +117,13 @@ const Home = () => {
                 aria-label="adresse"
                 className="home-page__input"
                 placeholder="Adresse"
+                onInput={handleAdress}
               />
               <button
-                className="home-page__cta-btn home-page__cta-btn--top"
+                disabled={adress === ""}
+                className={`home-page__cta-btn home-page__cta-btn--top ${
+                  adress === "" ? "home-page__cta-btn--disabled" : ""
+                }`}
                 onClick={handleModal}
               >
                 Søk

@@ -12,11 +12,11 @@ const menuItems = [
   },
   {
     label: "About Us",
-    url: "#",
+    url: "/404",
   },
   {
     label: "Contact Us",
-    url: "#",
+    url: "/404",
   },
 ]
 

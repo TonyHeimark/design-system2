@@ -53,6 +53,9 @@
 
     &--newsletter {
       max-width: 600px;
+      @include md {
+        grid-gap: 30px;
+      }
     }
   }
 
@@ -150,6 +153,14 @@
         bottom: 70px;
       }
     }
+    &--disabled {
+      background: rgb(252, 204, 122);
+      &:hover {
+        background: rgb(252, 204, 122);
+        transform: scale(1);
+        cursor: default;
+      }
+    }
   }
 
   &__input {
@@ -243,6 +254,7 @@
     padding: 10px 15px;
     right: -4%;
     top: 10px;
+    cursor: pointer;
   }
 
   //form section modal rest of css is in modalForm.scss
@@ -261,5 +273,29 @@
     width: 100%;
     margin-left: 10px auto;
     opacity: 0;
+  }
+
+  &__continue {
+    margin-top: 70px;
+  }
+
+  &__prev-or-next {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include md {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__continue-btn {
+    @include button;
+    margin: 20px auto;
+
+    &--grey {
+      background: #c9c8c8;
+      &:hover {
+        background: #dbdada;
+      }
+    }
   }
 }

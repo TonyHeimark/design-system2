@@ -1,17 +1,37 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import kjokken from "../assets/images/Kjøkken.svg"
 import garasj from "../assets/images/Garasj.svg"
 import bad from "../assets/images/Bad.svg"
 import balkong from "../assets/images/Balkong.svg"
 
 const ModalForm = () => {
-  const [parkingChecked, setParkingChecked] = useState(false)
-  const [balkongChecked, setBalkongChecked] = useState(false)
-  const [badChecked, setBadChecked] = useState(false)
-  const [kjokkenChecked, setKjokkenChecked] = useState(false)
+  const [houseSize, setHouseSize] = useState(localStorage.getItem("houseSize"))
+  const [parkingChecked, setParkingChecked] = useState(
+    JSON.parse(localStorage.getItem("parkingChecked"))
+  )
+  const [balkongChecked, setBalkongChecked] = useState(
+    JSON.parse(localStorage.getItem("balkongChecked"))
+  )
+  const [badChecked, setBadChecked] = useState(
+    JSON.parse(localStorage.getItem("badChecked"))
+  )
+  const [kjokkenChecked, setKjokkenChecked] = useState(
+    JSON.parse(localStorage.getItem("kjokkenChecked"))
+  )
+
+  useEffect(() => {
+    localStorage.setItem("parkingChecked", parkingChecked)
+    localStorage.setItem("balkongChecked", balkongChecked)
+    localStorage.setItem("badChecked", badChecked)
+    localStorage.setItem("kjokkenChecked", kjokkenChecked)
+    localStorage.setItem("houseSize", houseSize)
+  }, [kjokkenChecked, balkongChecked, badChecked, parkingChecked, houseSize])
+
+  const handleHouseSize = e => {
+    setHouseSize(e.target.value)
+  }
 
   const handleCheckbox = e => {
-    console.log(e.target.id)
     if (e.target.id === "parking") {
       setParkingChecked(!parkingChecked)
     } else if (e.target.id === "balkong") {
@@ -36,8 +56,9 @@ const ModalForm = () => {
       <input
         className="modalForm__input"
         type="text"
-        placeholder="94"
         aria-label="primærrom"
+        value={houseSize ? houseSize : ""}
+        onChange={handleHouseSize}
       />
       <div className="modalForm__text-box">
         <span className="modalForm__sub-heading">Har du følgende</span>
@@ -51,14 +72,13 @@ const ModalForm = () => {
           className={`modalForm__checkbox-item ${
             parkingChecked ? "modalForm__checkbox-item--checked" : ""
           }`}
-          onClick={handleCheckbox}
         >
-          <label for="parking" className="modalForm__item">
+          <label htmlFor="parking" className="modalForm__item">
             <span className="modalForm__item-name">Parkering/garasj</span>
             <img src={garasj} alt="kjøkken ikon" />
           </label>
           <input
-            checked={parkingChecked}
+            onChange={handleCheckbox}
             type="checkbox"
             id="parking"
             name="parking"
@@ -70,15 +90,14 @@ const ModalForm = () => {
           className={`modalForm__checkbox-item ${
             balkongChecked ? "modalForm__checkbox-item--checked" : ""
           }`}
-          onClick={handleCheckbox}
         >
-          <label for="balkong" className="modalForm__item">
+          <label htmlFor="balkong" className="modalForm__item">
             <span className="modalForm__item-name">Balkong/terasse</span>
             <img src={balkong} alt="kjøkken ikon" />
           </label>
 
           <input
-            checked={balkongChecked}
+            onChange={handleCheckbox}
             type="checkbox"
             id="balkong"
             name="balkong"
@@ -101,14 +120,13 @@ const ModalForm = () => {
           className={`modalForm__checkbox-item ${
             badChecked ? "modalForm__checkbox-item--checked" : ""
           }`}
-          onClick={handleCheckbox}
         >
-          <label for="bad" className="modalForm__item">
+          <label htmlFor="bad" className="modalForm__item">
             <span className="modalForm__item-name">Bad/toilett</span>
             <img src={bad} alt="kjøkken ikon" />
           </label>
           <input
-            checked={badChecked}
+            onChange={handleCheckbox}
             className="modalForm__checkbox"
             type="checkbox"
             id="bad"
@@ -121,15 +139,14 @@ const ModalForm = () => {
           className={`modalForm__checkbox-item ${
             kjokkenChecked ? "modalForm__checkbox-item--checked" : ""
           }`}
-          onClick={handleCheckbox}
         >
-          <label for="kjokken" className="modalForm__item">
+          <label htmlFor="kjokken" className="modalForm__item">
             <span className="modalForm__item-name">kjøkken</span>
             <img src={kjokken} alt="kjøkken ikon" />
           </label>
 
           <input
-            checked={kjokkenChecked}
+            onChange={handleCheckbox}
             type="checkbox"
             id="kjokken"
             name="balkong"

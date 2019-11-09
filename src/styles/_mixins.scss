@@ -56,8 +56,8 @@
   color: $text-color;
   cursor: pointer;
   &:hover {
-    background: darken($color-yellow, 20%);
-    color: white;
+    background: lighten($color-yellow, 10%);
+    transform: scale(1.02);
     transition: 0.1s linear;
   }
 }

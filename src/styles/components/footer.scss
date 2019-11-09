@@ -1,5 +1,13 @@
 .footer {
   height: 80px;
   background-color: $text-color;
-  margin-top: 50px;
+  position: relative;
+
+  &__copyright {
+    position: absolute;
+    width: auto;
+    color: white;
+    top: 30px;
+    left: calc(50% - 100.5px);
+  }
 }
