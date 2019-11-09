@@ -1,0 +1,71 @@
+.modalForm {
+  &__text-box {
+    margin: 70px 0 0;
+  }
+
+  &__sub-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &__text {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  &__input {
+    max-width: 50px;
+    width: 100%;
+    border: 2px solid $color-yellow;
+    background: $background-brown;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+
+  &__checkbox-wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    grid-gap: 50px;
+    margin: 30px 0;
+    @include sm {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  &__checkbox-item {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.3s;
+      border: 10px solid rgba(85, 243, 85, 0.267);
+    }
+
+    &--checked {
+      transition: 0.3s;
+      border: 10px solid $color-green !important;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    cursor: pointer;
+  }
+
+  &__item-name {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
