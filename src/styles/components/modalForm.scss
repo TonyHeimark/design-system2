@@ -54,6 +54,7 @@
     &:focus {
       transition: 0.3s;
       border: 10px solid rgba(85, 243, 85, 0.267);
+      outline: none;
     }
 
     &--checked {
