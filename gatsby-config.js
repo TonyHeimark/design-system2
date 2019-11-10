@@ -3,6 +3,7 @@ module.exports = {
     title: `HomeFair`,
     description: `Vi anvender kunstig intelligens til å finne meglerne som sikrer deg høyeste markedspris for din bolig.`,
     author: `Tony Heimark`,
+    robots: "no index",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
