@@ -31,17 +31,24 @@ const ModalForm = () => {
     setHouseSize(e.target.value)
   }
 
-  const handleCheckbox = e => {
-    if (e.target.id === "parking") {
+  const handleCheckbox = (e, childId) => {
+    if (e.target.id === "parking" || childId === "parking") {
       setParkingChecked(!parkingChecked)
-    } else if (e.target.id === "balkong") {
+    } else if (e.target.id === "balkong" || childId === "balkong") {
       setBalkongChecked(!balkongChecked)
-    } else if (e.target.id === "bad") {
+    } else if (e.target.id === "bad" || childId === "bad") {
       setBadChecked(!badChecked)
-    } else if (e.target.id === "kjokken") {
+    } else if (e.target.id === "kjokken" || childId === "kjokken") {
       setKjokkenChecked(!kjokkenChecked)
     } else {
       return
+    }
+  }
+
+  const handleKeyPress = e => {
+    let keycode = e.keyCode ? e.keyCode : e.which
+    if (keycode === 13) {
+      handleCheckbox(e, e.target.children[1].id)
     }
   }
   return (
@@ -69,6 +76,9 @@ const ModalForm = () => {
       </div>
       <div className="modalForm__checkbox-wrapper">
         <div
+          onKeyUp={handleKeyPress}
+          aria-label="checkbox for kjøkken"
+          tabIndex="0"
           className={`modalForm__checkbox-item ${
             parkingChecked ? "modalForm__checkbox-item--checked" : ""
           }`}
@@ -79,6 +89,7 @@ const ModalForm = () => {
           </label>
           <input
             onChange={handleCheckbox}
+            tabIndex="-1"
             type="checkbox"
             id="parking"
             name="parking"
@@ -87,6 +98,9 @@ const ModalForm = () => {
         </div>
 
         <div
+          aria-label="checkbox for kjøkken"
+          tabIndex="0"
+          onKeyUp={handleKeyPress}
           className={`modalForm__checkbox-item ${
             balkongChecked ? "modalForm__checkbox-item--checked" : ""
           }`}
@@ -98,6 +112,7 @@ const ModalForm = () => {
 
           <input
             onChange={handleCheckbox}
+            tabIndex="-1"
             type="checkbox"
             id="balkong"
             name="balkong"
@@ -117,6 +132,9 @@ const ModalForm = () => {
       </div>
       <div className="modalForm__checkbox-wrapper">
         <div
+          aria-label="checkbox for kjøkken"
+          tabIndex="0"
+          onKeyUp={handleKeyPress}
           className={`modalForm__checkbox-item ${
             badChecked ? "modalForm__checkbox-item--checked" : ""
           }`}
@@ -127,7 +145,7 @@ const ModalForm = () => {
           </label>
           <input
             onChange={handleCheckbox}
-            className="modalForm__checkbox"
+            tabIndex="-1"
             type="checkbox"
             id="bad"
             name="parking"
@@ -136,6 +154,9 @@ const ModalForm = () => {
         </div>
 
         <div
+          aria-label="checkbox for kjøkken"
+          tabIndex="0"
+          onKeyUp={handleKeyPress}
           className={`modalForm__checkbox-item ${
             kjokkenChecked ? "modalForm__checkbox-item--checked" : ""
           }`}
@@ -147,6 +168,7 @@ const ModalForm = () => {
 
           <input
             onChange={handleCheckbox}
+            tabIndex="-1"
             type="checkbox"
             id="kjokken"
             name="balkong"

@@ -18,7 +18,7 @@ const Home = () => {
     setResult(!result)
   }
 
-  useEffect(() => {
+  useEffect(isModalOpen => {
     if (!isModalOpen) {
       localStorage.clear()
     }
